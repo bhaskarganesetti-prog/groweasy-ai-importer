@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+// @ts-ignore
 import Papa from "papaparse";
 
 import UploadBox from "../components/UploadBox";
