@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Papa from "papaparse";
+import Papa, { ParseResult } from "papaparse";
 
 import UploadBox from "../components/UploadBox";
 import PreviewTable from "../components/PreviewTable";
@@ -24,7 +24,7 @@ export default function Home() {
     header: true,
     skipEmptyLines: true,
 
-    complete: (results) => {
+    complete: (results: ParseResult<any>) => {
       setPreviewData(results.data as any[]);
     },
 
