@@ -11,6 +11,7 @@ export const callGemini = async (prompt: string) => {
         },
       ],
       temperature: 0,
+      max_tokens: 1500,
     });
 
     console.log("OpenRouter Response:");
