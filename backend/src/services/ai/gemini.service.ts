@@ -13,7 +13,14 @@ export const callGemini = async (prompt: string) => {
       temperature: 0,
     });
 
-    let text = completion.choices[0]?.message?.content || "";
+    console.log("OpenRouter Response:");
+    console.log(JSON.stringify(completion, null, 2));
+
+    if (!completion.choices || completion.choices.length === 0) {
+      throw new Error("No choices returned from OpenRouter");
+    }
+
+    let text = completion.choices[0].message?.content || "";
 
     text = text
       .replace(/```json/g, "")
